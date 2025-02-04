@@ -1,44 +1,50 @@
 <!DOCTYPE html>
 <html>
-    <title>KASIR TOKO - SKINCARE CIKA</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            
-        }
-        
-    </style>
+<head>
+    <link rel="stylesheet" href="style.css">
 </head>
-    <img src="https://down-id.img.susercontent.com/file/id-11134207-7r991-lyi1gp6qo8bsf8@resize_w450_nl.webp" float="left"; width="100px"; height ="100px"></img>   
-<form action="proses.php" method="get">
-    <hr width="25%" align="left" size="5px" color="pink">
-    <div style="color: #000000; margin:0; background : rgb(219, 146, 189); padding: 20px; font-size: 1.5em; text-align: center;">SKINCARE CIKA</div>
+<body>
+    <img src="https://stephanie-skincare.com/storage/2022/02/WhatsApp-Image-2022-01-19-at-14.32.08-870x503.jpeg" float="left"; width="300px"; height ="200px"></img>
+    <h1 style="color: blue; font-size: 24px;">Selamat Datang di Halaman Beranda</h1>
+    <a href="about.html">Tentang Kami</a>
     
-    <h3>LOGIN KASIR</h3>
-<table border="0">
-<tr>
-<td>Username</td>
+    <!-- buka buku tamu -->
+    <button onclick="bukaBukuTamu()">Buka Buku Tamu</button>
 
-<td>: <input type="text" name="namalengkap"></td>
-</tr>
-
-<tr>
-<td>Password</td>
-<td>: <input type="Password" name="Password"></td>
-
-</tr>
-<tr>
-<td>Level</td>
-
-<td>: <select name="Level">
-<option value="Admin">Admin</option>
-
-<option value="Owner" selected="selected">Owner</option>
-</select></td>
-<tr>
-    <td><input type="submit" name="Login" value="Login"></td>
-    </tr>
+    <!-- Tabel untuk menampilkan data buku tamu -->
+    <h3>Data Buku Tamu</h3>
+    <table id="bukuTamuTable" border="1">
+        <tr>
+            <th>Nama</th>
+            <th>Email</th>
+            <th>Pesan</th>
+        </tr>
     </table>
-    </form>
-    </body>
-    </html>
+
+    <!-- Script JavaScript untuk buku tamu -->
+    <script>
+        function bukaBukuTamu() {
+            // Menampilkan alert untuk meminta input dari pengguna
+            let nama = prompt("Masukkan Nama Anda:");
+            let email = prompt("Masukkan Email Anda:");
+            let pesan = prompt("Masukkan Pesan Anda:");
+
+            // Menyimpan data di console browser
+            console.log("Nama: " + nama);
+            console.log("Email: " + email);
+            console.log("Pesan: " + pesan);
+
+            // Menambahkan data ke dalam tabel buku tamu
+            let table = document.getElementById("bukuTamuTable");
+            let row = table.insertRow();
+            let cell1 = row.insertCell(0);
+            let cell2 = row.insertCell(1);
+            let cell3 = row.insertCell(2);
+
+            cell1.innerHTML = nama;
+            cell2.innerHTML = email;
+            cell3.innerHTML = pesan;
+        }
+    </script>
+</body>
+</html>
